@@ -19,5 +19,8 @@ def add_class(field, css_class):
     existing_class = field.field.widget.attrs.get('class', '')
     if existing_class:
         css_class = f"{existing_class} {css_class}"
+        
+    field.field.widget.attrs['class'] = css_class.strip()
     
-    return field.as_widget(attrs={'class': css_class.strip()})
+    return field
+    # return field.as_widget(attrs={'class': css_class.strip()})
