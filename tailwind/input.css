@@ -36,5 +36,32 @@
     --color-on-danger: var(--color-white);
 
     /* Border Radius */
-    --radius-radius: var(--radius-lg);
+    --radius-radius: var(--radius-sm);
+}
+
+@layer base {
+    /* For Firefox browser */
+    /* * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-outline) var(--color-surface);
+        @variant dark {
+            scrollbar-color: var(--color-outline-dark) var(--color-surface-dark);
+        }
+    } */
+    /* For WebKit browsers (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: 0 0;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-outline);
+        @variant dark {
+            background-color: var(--color-outline-dark);
+        }
+        border-radius: 3px;
+    }
+
 }

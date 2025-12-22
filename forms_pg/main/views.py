@@ -31,10 +31,10 @@ def index(request):
     # for (prop, val) in form.fields['username'].__dict__.items():
     #     print(f'{prop} = {type(val)} {val}')
 
-    my_form = TestForm(data=data, prefix='mf')
+    my_form = TestForm(prefix='mf')
     
-    my_form.add_error(None, 'Ошибка формы №1')
-    my_form.add_error(None, 'Ошибка формы №2')
+    # my_form.add_error(None, 'Ошибка формы №1')
+    # my_form.add_error(None, 'Ошибка формы №2')
 
 
     context = {
